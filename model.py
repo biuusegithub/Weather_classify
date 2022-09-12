@@ -17,16 +17,8 @@ def get_net_1():
     net = net.to(d2l.try_gpu())
     return net
 
+
 def get_net_2():
     net = d2l.resnet18(4, 3)
     net = net.to(d2l.try_gpu())
     return net
-
-
-
-
-
-
-
-
-
