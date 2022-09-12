@@ -12,8 +12,6 @@ from d2l import torch as d2l
 from torch import nn
 ############################################################################################################################
 
-
-
 # 文件重命名函数
 def rename_file(path, newname):
     # path = "img/angry"
@@ -34,7 +32,6 @@ def rename_file(path, newname):
         os.rename(old_name, new_name)
 
     print("rename over")   
-
 
 
 # 百度图片下载函数
@@ -126,6 +123,7 @@ class Weather_dataset(data.Dataset):
     def __len__(self):
         return len(self.imgs_path)
 
+    
 # 图片显示
 types = ["sun", "rain", "snow", "Foggy"]
 type_to_index = dict((type, index) for index, type in enumerate(types))
@@ -140,7 +138,7 @@ def show_img(imgs, labels):
         plt.imshow(img)
     plt.show()
 
-
+    
 # 训练函数
 def train_ch6(net, train_iter, test_iter, num_epochs, lr, wd, device):
     """用GPU训练模型"""
@@ -196,25 +194,5 @@ def predict(net, dataloader, device):
         break 
     pred = net(imgs.to(device)).argmax(axis=1)
     show_img(imgs, pred)
+    
 ###############################################################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
