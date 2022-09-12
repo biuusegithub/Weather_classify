@@ -7,6 +7,7 @@ import model as ml
 from d2l import torch as d2l
 import torch
 
+
 '''
 # 爬取数据
 keywords = ["晴天", "雨天", "雪天", "雾天"]
@@ -28,7 +29,6 @@ path = "img/sun"
 new_name = "sun"
 tl.rename_file(path, new_name)
 '''
-
 
 
 imgs_path = "img"
@@ -55,6 +55,7 @@ weather_dataloader = data.DataLoader(weather_dataset, batch_size=batch_size, shu
 
 train_len, test_len = int(len(weather_dataset)*0.8), int(len(weather_dataset)*0.2)
 
+
 # 随机划分数据集
 train_dataset, test_dataset = data.random_split(
     dataset=weather_dataset, 
@@ -77,17 +78,3 @@ tl.train_ch6(net, train_dataloader, test_dataloader, num_epochs, lr, wd, d2l.try
 tl.predict(net, test_dataloader, d2l.try_gpu())
 
 d2l.plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
